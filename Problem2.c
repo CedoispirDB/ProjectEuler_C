@@ -6,30 +6,24 @@ int main() {
     int second = 2;
     int sum = 0;
 
-    int totalSum = 3;
+    int totalSum = 2;
    
 
     while(sum < 4000000) {
 
-        printf("sum: %d\n", sum);
-
-        totalSum += sum;
-
-        printf("\ntotal sum: %d\n", totalSum);
-
+        if (sum % 2 == 0) {
+            totalSum += sum;
+        }
 
         sum = first + second;
         first = second;
         second = sum;        
-        
-
-
+   
     }
 
-    
+    printf("total sum: %d", totalSum);
 
    return 0;
  
 }
 
-//4613732
