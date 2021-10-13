@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h>
-#include <string.h>
+#include<string.h>
+#include<limits.h>
+
 
 bool isPalindrom(char* n) {
 
@@ -19,16 +21,28 @@ bool isPalindrom(char* n) {
 
 int main() {
 
+    int m = 0;
+    bool result = 1;
+    int answer = 0;
 
+    for(int i = 999; i >= 100; i--) {
+        for(int j = 999; j >= 100; j--) {
+           m = i * j;
+           printf("%d * %d = %d\n", i, j, m);
+           
+            char str[256];
+            sprintf(str, "%d", m);
 
-    for(int i = 100; i > 0; i--) {
-        for(int j = 100; j > 0; j--) {
-            i * j
+            if (isPalindrom(str) == 1) {
+                if (m > answer) {
+                    answer = m;
+                }
+            }
 
         }
     }
 
-    bool x = isPalindrom("901039");
-    printf("%d", x);
+    printf("Answer: %d", answer);
+
     return 0;
 }
