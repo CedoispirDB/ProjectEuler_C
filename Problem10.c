@@ -30,8 +30,9 @@ int main() {
     int sum = 0;
 
     for(int i = 1; i <= limit; i++) {
-        printf("i: %d\n", i);
+        // printf("i: %d\n", i);
         if(isPrime(i) == 1) {
+            printf("Prime: %d\n", i);
             sum += i;
         }
     }
